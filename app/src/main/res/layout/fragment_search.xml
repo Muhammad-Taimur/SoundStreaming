@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:clickable="true"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.fragments.SearchFragment">
+
+    <!--Search Engine Section-->
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="1dp"
+        card_view:cardUseCompatPadding="false"
+        card_view:cardBackgroundColor="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:animateLayoutChanges="true">
+
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@mipmap/ic_search"
+            />
+
+            <TextView
+                android:id="@+id/search_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_search"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="@string/search_description"
+            />
+
+            <EditText
+                android:id="@+id/search_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search_description"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:inputType="textFilter"
+                android:drawablePadding="10dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:theme="@style/SearchEditText"
+                android:textSize="14sp"
+                android:hint="@string/search_hint"
+                android:textColorHint="@color/black40PercentOpacity"
+                android:layout_toLeftOf="@+id/ic_search"
+            />
+
+            <ImageView
+                android:id="@+id/ic_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_alignTop="@+id/search_et"
+                android:layout_alignBottom="@+id/search_et"
+                android:background="@drawable/more_options_ripple"
+                android:src="@mipmap/ic_search_green"
+            />
+
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    <!--End Search Engine Section-->
+
+    <ImageView
+        android:id="@+id/no_search_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/ic_action_halt"
+        android:visibility="gone"
+    />
+
+    <TextView
+        android:id="@+id/no_search_results_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black40PercentOpacity"
+        android:text="@string/no_search_results_title"
+        android:visibility="gone"
+    />
+
+    <TextView
+        android:id="@+id/no_search_results_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="12sp"
+        android:textColor="@color/lightGrey"
+        android:text="@string/no_search_results_description"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:visibility="gone"
+    />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/BallSpinLoader"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        app:indicator="BallSpinFadeLoader"
+        app:indicator_color="@color/ballSpinLoaderColor"
+    />
+
+    <sc.mp3musicplayer.views.TracksListView
+        android:id="@+id/search_results"
+        android:layout_width="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:layout_marginTop="1dp"
+        android:animateLayoutChanges="true"
+        android:layout_height="wrap_content"
+    />
+
+</LinearLayout>

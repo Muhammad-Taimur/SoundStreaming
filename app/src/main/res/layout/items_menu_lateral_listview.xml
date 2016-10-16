@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/tracks_list_item_active"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_howitworks"/>
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/item_icon"
+        android:gravity="center_vertical"
+        android:text="@string/app_name"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/item_icon"
+        android:layout_alignLeft="@+id/divider_items"
+        android:layout_alignStart="@+id/divider_items"/>
+
+    <View
+        android:id="@+id/divider_items"
+        style="@style/lineDivider"
+        android:layout_below="@+id/item_icon"
+        android:layout_toRightOf="@+id/item_icon"
+        android:layout_toEndOf="@+id/item_icon" />
+
+</RelativeLayout>
