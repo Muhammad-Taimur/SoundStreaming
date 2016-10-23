@@ -52,7 +52,7 @@ public class DrawerListListener implements AdapterView.OnItemClickListener {
     public void shareApp(){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "App's url to share");
         sendIntent.setType(Constants.TYPE);
         mContext.startActivity(sendIntent);
     }

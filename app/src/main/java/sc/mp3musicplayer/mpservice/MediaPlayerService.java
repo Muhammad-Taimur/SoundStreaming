@@ -11,6 +11,7 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.google.common.base.Preconditions;
 
@@ -89,7 +90,10 @@ public class MediaPlayerService extends Service implements OnPreparedListener, O
     @Override
     public void onDestroy() {
         EventBus.getDefault().unregister(this);
+        Log.d("Service", "destroy!");
+        releaseMediaPlayer();
     }
+
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
