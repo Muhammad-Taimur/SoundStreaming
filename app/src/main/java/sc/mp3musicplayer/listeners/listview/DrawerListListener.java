@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.DrawerLayout;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -24,9 +25,11 @@ public class DrawerListListener implements AdapterView.OnItemClickListener {
     private final int SHARE = 2;
     private final int QUIT = 3;
     private Context mContext;
+    private DrawerLayout mDrawerLayout;
 
-    public DrawerListListener(final @NonNull Context context){
+    public DrawerListListener(final @NonNull Context context, final @NonNull DrawerLayout drawerLayout){
         this.mContext = Preconditions.checkNotNull(context);
+        this.mDrawerLayout = Preconditions.checkNotNull(drawerLayout);
     }
 
     @Override
@@ -46,13 +49,14 @@ public class DrawerListListener implements AdapterView.OnItemClickListener {
                 ((Activity)mContext).finish();
                 break;
         }
+        mDrawerLayout.closeDrawers();
 
     }
 
     public void shareApp(){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, "App's url to share");
+        sendIntent.putExtra(Intent.EXTRA_TEXT, Constants.URL_APP + mContext.getPackageName());
         sendIntent.setType(Constants.TYPE);
         mContext.startActivity(sendIntent);
     }

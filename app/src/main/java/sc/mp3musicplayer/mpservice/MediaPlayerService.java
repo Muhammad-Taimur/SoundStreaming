@@ -90,7 +90,6 @@ public class MediaPlayerService extends Service implements OnPreparedListener, O
     @Override
     public void onDestroy() {
         EventBus.getDefault().unregister(this);
-        Log.d("Service", "destroy!");
         releaseMediaPlayer();
     }
 

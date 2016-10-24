@@ -24,6 +24,8 @@ public class Constants {
     public static final String IS_PLAYING = "isPlaying";
     public static final int UPDATE_FOOTER = 1;
     public static final String TYPE = "text/plain";
+    public static final String URL_APP = "https://play.google.com/store/apps/details?id=";
+
 
     /**
      * Indicates the state of Media Player within the service {@link sc.mp3musicplayer.mpservice.MediaPlayerService}

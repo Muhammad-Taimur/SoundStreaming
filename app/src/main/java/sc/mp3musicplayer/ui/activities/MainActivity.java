@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     private void setUpNavigationDrawer(){
         mDrawerToggle = new ActionBarDrawerToggleListener(this, mDrawerLayout, mToolbar, R.string.open, R.string.close);
         mDrawerList.setAdapter(new DrawerListAdapter(this));
-        mDrawerList.setOnItemClickListener(new DrawerListListener(this));
+        mDrawerList.setOnItemClickListener(new DrawerListListener(this, mDrawerLayout));
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         setUpToolbar();
     }
