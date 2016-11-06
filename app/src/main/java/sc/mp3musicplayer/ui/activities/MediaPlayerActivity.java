@@ -252,7 +252,7 @@ public class MediaPlayerActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
     private void startPlayProgressUpdater() {
-        if(MainActivity.mServiceConnection.getService().mediaPlayer() != null){
+        if(MainActivity.mServiceConnection.getService() != null && MainActivity.mServiceConnection.getService().mediaPlayer() != null){
             mSongProgressBar.setProgress(MainActivity.mServiceConnection.getService().mediaPlayer().getCurrentPosition());
             updateTime();
             if (MainActivity.mServiceConnection.getService().mState == State.PlAYING) {

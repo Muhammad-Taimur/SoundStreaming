@@ -85,10 +85,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
         if (mServiceConnection.getService() != null){
             SaveInstanceHelper.onSaveInstance(outState, mServiceConnection.getService());
         }
+        super.onSaveInstanceState(outState);
     }
 
     @Override

@@ -24,8 +24,8 @@ public class DrawerListListener implements AdapterView.OnItemClickListener {
     private final int ABOUT = 1;
     private final int SHARE = 2;
     private final int QUIT = 3;
-    private Context mContext;
-    private DrawerLayout mDrawerLayout;
+    private final Context mContext;
+    private final DrawerLayout mDrawerLayout;
 
     public DrawerListListener(final @NonNull Context context, final @NonNull DrawerLayout drawerLayout){
         this.mContext = Preconditions.checkNotNull(context);
@@ -53,7 +53,7 @@ public class DrawerListListener implements AdapterView.OnItemClickListener {
 
     }
 
-    public void shareApp(){
+    private void shareApp(){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, Constants.URL_APP + mContext.getPackageName());
