@@ -104,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
     }
 
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
+
     private void setUpToolbar(){
         setSupportActionBar(mToolbar);
         if(getSupportActionBar() != null){
