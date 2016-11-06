@@ -69,10 +69,10 @@ public class MediaPlayerService extends Service implements OnPreparedListener, O
      * @param intent The intent sent it from {@link OnItemClickListener}
      */
     private void setUpTrackToPlay(Intent intent){
-        if(mPosition != Integer.parseInt(intent.getStringExtra(Constants.TRACK_POSITION))){
+     //   if(mPosition != Integer.parseInt(intent.getStringExtra(Constants.TRACK_POSITION))){
             mPosition = Integer.parseInt(intent.getStringExtra(Constants.TRACK_POSITION));
             playTrack(mPosition);
-        }
+      //  }
 
         if(mPosition != -1){
             // if mPosition is different to -1 that means there's a track which is playing,
