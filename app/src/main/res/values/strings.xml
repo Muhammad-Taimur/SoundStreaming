@@ -14,8 +14,8 @@
     <string name="track_options">Choose...</string>
 
     <string name="title_dialog">Note</string>
-    <string name="description_dialog">This STrack has already been downloaded!</string>
-    <string name="delete_track_content">Are you sure that you want to delete this Track?</string>
+    <string name="description_dialog">This Track has already been downloaded!</string>
+    <string name="delete_track_content">Are you sure you want to delete this Track?</string>
     <string name="track_downloaded">Track has been downloaded!</string>
     <string name="track_deleted">Track has been deleted!</string>
     <string name="start_download">Starting Download...</string>
