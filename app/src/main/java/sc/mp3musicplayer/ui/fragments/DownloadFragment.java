@@ -16,7 +16,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
+import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 
 import org.greenrobot.eventbus.EventBus;
@@ -37,6 +39,7 @@ import sc.mp3musicplayer.mvp.download.presenter.DownloadPresenter;
 import sc.mp3musicplayer.mvp.download.view.IDownloadView;
 import sc.mp3musicplayer.utilities.SaveInstanceHelper;
 import sc.mp3musicplayer.utilities.SnackbarHelper;
+import sc.mp3musicplayer.utilities.ViewHelper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +49,11 @@ public class DownloadFragment extends Fragment implements IDownloadView{
     @Nullable
     @BindView(R.id.download_results)
     ListView mListDownloadResults;
+
+    @Nullable
+    @BindView(R.id.no_tracks)
+    TextView mNoTracks;
+
 
     private TracksListAdapter mListTracksAdapter;
     private DownloadPresenter mPresenter;
@@ -103,18 +111,32 @@ public class DownloadFragment extends Fragment implements IDownloadView{
     @Override
     public void onLoadedSuccess(List<DTrack> tracks) {
         Preconditions.checkNotNull(mListDownloadResults, "List cannot be null");
-        if(mListTracksAdapter == null){
-            mListTracksAdapter = new TracksListAdapter(getActivity(), tracks);
-            mListDownloadResults.setAdapter(mListTracksAdapter);
-            mListDownloadResults.setOnItemClickListener(new OnItemClickListener(getActivity()));
+        if(tracks.size() > 0){
+
+            if(ViewHelper.isViewVisible(Optional.fromNullable(mNoTracks))){
+                ViewHelper.showOrHideView(Optional.fromNullable(mNoTracks),false);
+            }
+
+            if(mListTracksAdapter == null){
+                mListTracksAdapter = new TracksListAdapter(getActivity(), tracks);
+                mListDownloadResults.setAdapter(mListTracksAdapter);
+                mListDownloadResults.setOnItemClickListener(new OnItemClickListener(getActivity()));
+            }else{
+                mListTracksAdapter.updateListTracks(tracks);
+            }
+
         }else{
-            mListTracksAdapter.updateListTracks(tracks);
+            ViewHelper.showOrHideView(Optional.fromNullable(mNoTracks), true);
         }
     }
 
     @Override
     public void onLoadedFailure() {
-
+        if(mListTracksAdapter != null){
+            mListTracksAdapter.clear();
+            mListTracksAdapter.notifyDataSetChanged();
+        }
+        ViewHelper.showOrHideView(Optional.fromNullable(mNoTracks), true);
     }
 
     /**

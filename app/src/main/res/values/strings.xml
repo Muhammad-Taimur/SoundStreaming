@@ -56,5 +56,6 @@
     <string name="about">
         This app makes use of SoundCloud Api which is a social network that is used primarily for the distribution of audio tracks.  \nIf you think about a social network like Pinterest or Instagram as sharing the world in pictures and/or videos, then think of SoundCloud as sharing the world in sounds.
     </string>
+    <string name="there_is_not_track">There is not any track</string>
 
 </resources>

@@ -13,4 +13,16 @@
         android:animateLayoutChanges="true"
         android:layout_height="wrap_content"/>
 
+    <TextView
+        android:id="@+id/no_tracks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="@color/grey_text"
+        android:fontFamily="sans-serif-light"
+        android:visibility="gone"
+        android:text="@string/there_is_not_track"/>
+
 </FrameLayout>
