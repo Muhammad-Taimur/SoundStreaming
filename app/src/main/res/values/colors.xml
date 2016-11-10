@@ -26,5 +26,6 @@
     <color name="item_pressed">#6633c4a2</color>
 
     <color name="black_opacity">#D8000000</color>
+    <color name="blue_text">#009ACD</color>
 
 </resources>
