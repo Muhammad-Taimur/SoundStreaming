@@ -3,6 +3,7 @@ package sc.mp3musicplayer.restclient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import sc.mp3musicplayer.BuildConfig;
 
 /**
  * Created by regulosarmiento on 30/05/16.
@@ -14,7 +15,7 @@ public class RestUtils {
     public static final String ID = "client_id";
     public static final String BASE_URL  = "https://api.soundcloud.com";
     public static final String TRACK_URL = "/tracks?&limit=20";
-    public static final String CLIENT_ID = "4474772b6278c4f6edfd952f98aa5664";
+    public static final String API_KEY = BuildConfig.API_KEY;
 
     public static IRestClient createRestClient(){
         final Retrofit retrofit = new Retrofit.Builder()

@@ -38,11 +38,11 @@ public class SearchPresenterTest {
     public void shouldRequestTracksOnSearchTrack() throws Exception {
 
 //        doThrow(new RuntimeException()).when(mSearchInteractor).loadTracks("shakira", 50);
-////        when(mSearchInteractor.getmRestClient().getTracks("shakira",50, RestUtils.CLIENT_ID)).thenReturn(any());
+////        when(mSearchInteractor.getmRestClient().getTracks("shakira",50, RestUtils.API_KEY)).thenReturn(any());
 //
 //        mSearchPresenter.searchTrack("shakira", 50);
 //        verify(mSearchInteractor).loadTracks("shakira", 50);
-//        verify(mSearchInteractor).getmRestClient().getTracks("shakira",50,RestUtils.CLIENT_ID)
+//        verify(mSearchInteractor).getmRestClient().getTracks("shakira",50,RestUtils.API_KEY)
 //                .subscribeOn(Schedulers.io())
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .subscribe(

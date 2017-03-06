@@ -106,7 +106,7 @@ public class FilesHelper {
         mDirectory = new File(mPath);
 
         if(!mDirectory.exists()){
-             Preconditions.checkArgument(mDirectory.mkdirs(), "Directory has been created!");
+             mDirectory.mkdirs();
           } else {
              return mPath;
         }

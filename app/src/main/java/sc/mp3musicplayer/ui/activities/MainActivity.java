@@ -26,6 +26,7 @@ import sc.mp3musicplayer.R;
 import sc.mp3musicplayer.adapters.DrawerListAdapter;
 import sc.mp3musicplayer.adapters.TabsPagerAdapter;
 import static sc.mp3musicplayer.constants.Constants.UPDATE_FOOTER;
+
 import sc.mp3musicplayer.listeners.ActionBarDrawerToggleListener;
 import sc.mp3musicplayer.listeners.ActionFooterPlayerListener;
 import sc.mp3musicplayer.listeners.listview.DrawerListListener;
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setUpNavigationDrawer();
         setUpTabsSettings();
+
     }
 
     @Override
@@ -182,4 +184,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
 }

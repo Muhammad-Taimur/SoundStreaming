@@ -1,14 +1,17 @@
 package sc.mp3musicplayer.views;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
@@ -37,6 +40,7 @@ import sc.mp3musicplayer.constants.TabsID;
 import sc.mp3musicplayer.models.DTrack;
 import sc.mp3musicplayer.models.ITrack;
 import sc.mp3musicplayer.models.STrack;
+import sc.mp3musicplayer.ui.activities.MainActivity;
 import sc.mp3musicplayer.utilities.DialogHelper;
 import sc.mp3musicplayer.utilities.DownloadHelper;
 import sc.mp3musicplayer.utilities.FilesHelper;
@@ -167,9 +171,21 @@ public class TracksRowItemView extends RelativeLayout{
                    EventBus.getDefault().post(mTracks);
                    break;
                case DOWNLOAD_TRACK:
-                   DownloadHelper.DownloadTrack((STrack) mTracks.get(position), new WeakReference<>(getContext()),
-                           (DownloadManager) getContext().getSystemService(Context.DOWNLOAD_SERVICE));
-                   SnackbarHelper.showMessage(this, R.string.start_download);
+                   if (Build.VERSION.SDK_INT >= 23) {
+                       if (getContext().checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                               == PackageManager.PERMISSION_GRANTED) {
+                           DownloadHelper.DownloadTrack((STrack) mTracks.get(position), new WeakReference<>(getContext()),
+                                   (DownloadManager) getContext().getSystemService(Context.DOWNLOAD_SERVICE));
+                           SnackbarHelper.showMessage(this, R.string.start_download);
+
+                       } else {
+                           ActivityCompat.requestPermissions((Activity) getContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                       }
+                   } else {
+                       DownloadHelper.DownloadTrack((STrack) mTracks.get(position), new WeakReference<>(getContext()),
+                               (DownloadManager) getContext().getSystemService(Context.DOWNLOAD_SERVICE));
+                       SnackbarHelper.showMessage(this, R.string.start_download);
+                   }
                    break;
            }
            dialog.dismiss();
@@ -187,5 +203,6 @@ public class TracksRowItemView extends RelativeLayout{
     private MaterialDialog.SingleButtonCallback getNegativeCallback(){
         return (dialog, which) -> dialog.dismiss();
     }
+
 }
 

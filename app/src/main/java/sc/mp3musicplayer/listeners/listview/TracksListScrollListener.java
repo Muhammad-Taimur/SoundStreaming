@@ -46,7 +46,7 @@ public class TracksListScrollListener implements IDetectScrollListener {
     }
 
     private void loadMoreTracks(final int nextTracks){
-        mRestClient.getTracks(mKeyword, nextTracks, RestUtils.CLIENT_ID)
+        mRestClient.getTracks(mKeyword, nextTracks, RestUtils.API_KEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

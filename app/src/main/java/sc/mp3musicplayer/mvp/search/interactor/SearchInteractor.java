@@ -29,7 +29,7 @@ public class SearchInteractor {
     }
 
     public void loadTracks(final String keyword){
-        mRestClient.getTracks(keyword, Constants.OFFSET, RestUtils.CLIENT_ID)
+        mRestClient.getTracks(keyword, Constants.OFFSET, RestUtils.API_KEY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
