@@ -24,7 +24,7 @@ MVP (Model View Presenter) pattern to keep it simple and make the code testable,
 
 ## Build from the source:
 
-In order to build the app you must provide your own API key fom soundcloud.com.
+In order to build the app you must provide your own API key from soundcloud.com.
 Open local.properties file and paste your key instead of ***YOUR_API_KEY*** text in this line:
 ```
 soundcloudapi="YOUR_API_KEY"
