@@ -1,6 +1,6 @@
 # Sound Streaming App
 
-![Screen] (https://raw.githubusercontent.com/ReguloSarmiento/SoundStreaming/2e0e0beda8ffe7166b82dee1df2476f18e9c0062/poster.png)
+![Screen](https://raw.githubusercontent.com/ReguloSarmiento/SoundStreaming/2e0e0beda8ffe7166b82dee1df2476f18e9c0062/poster.png)
 
 SoundStreaming is an app that fetches music/tracks data using [soundcloud.com] (https://soundcloud.com/) API.
 
@@ -13,11 +13,11 @@ SoundStreaming is an app that fetches music/tracks data using [soundcloud.com] (
 * Download tracks that are authorized by their authors
 
 ## Used libraries:
-* [RxJava] (https://github.com/ReactiveX/RxAndroid) and [Retrofit] (http://square.github.io/retrofit/) libraries to manage Rest Client
-* [ButterKnife] (http://jakewharton.github.io/butterknife/) library to bind views and avoid boilerplate views code
-* [EventBus] (https://github.com/greenrobot/EventBus) library to send data between components and makes code simpler
-* [Picasso] (http://square.github.io/picasso/) and [Circle ImageView] (https://github.com/hdodenhof/CircleImageView) libraries to manage images
-* [Mockito] (http://site.mockito.org/) library to make unit test and [Espresso] (https://google.github.io/android-testing-support-library/docs/espresso/) library to make UI test.
+* [RxJava](https://github.com/ReactiveX/RxAndroid) and [Retrofit](http://square.github.io/retrofit/) libraries to manage Rest Client
+* [ButterKnife](http://jakewharton.github.io/butterknife/) library to bind views and avoid boilerplate views code
+* [EventBus](https://github.com/greenrobot/EventBus) library to send data between components and makes code simpler
+* [Picasso](http://square.github.io/picasso/) and [Circle ImageView](https://github.com/hdodenhof/CircleImageView) libraries to manage images
+* [Mockito](http://site.mockito.org/) library to make unit test and [Espresso](https://google.github.io/android-testing-support-library/docs/espresso/) library to make UI test.
 
 ## Design pattern
 MVP (Model View Presenter) pattern to keep it simple and make the code testable, robust and easier to maintain
