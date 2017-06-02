@@ -1,6 +1,6 @@
 # Sound Streaming App
 
-![Screen](https://raw.githubusercontent.com/ReguloSarmiento/SoundStreaming/2e0e0beda8ffe7166b82dee1df2476f18e9c0062/poster.png)
+![Screen](https://raw.githubusercontent.com/ReguloSarmiento/SoundStreaming/master/soundstreaming.png)
 
 SoundStreaming is an app that fetches music/tracks data using [soundcloud.com] (https://soundcloud.com/) API.
 
